@@ -119,12 +119,27 @@ Either put them in the default `~/.weatherdesk_walls/` directory or specify a di
 
 - OS X
 
-## In background mode (only for OS X and Linux)
+## In background mode 
+
+### For OS X and Linux
 
 Run
 
 ```sh
 $ nohup python3 WeatherDesk.py > /dev/null &
+```
+
+### For Windows Users
+
+Create a .bat file to run WeatherDesk.py
+
+In "C:\Users\$user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" create a .vbs file to run the below
+
+```
+Dim WinScriptHost
+Set WinScriptHost = CreateObject("WScript.Shell")
+WinScriptHost.Run Chr(34) & "$PathToBatFile,vbs" & Chr(34), 0
+Set WinScriptHost = Nothing
 ```
 
 ## Note for OS X users
